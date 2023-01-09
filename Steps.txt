@@ -1,0 +1,15 @@
+1. django-admin.py startproject name
+2. python manage.py runserver
+3. python manage.py migrate
+4. python manage.py startapp name
+5. setting.py-->  installed app (name)
+6. add urls.py on a name folder
+7. create a template folder and insect an html file
+9. Test the web on the browser 
+
+Colors
+
+8F1F1B Meroon
+EC1E28 Red
+353E49 Dark grey
+8C8D91 Grey light

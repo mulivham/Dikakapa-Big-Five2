@@ -1,0 +1,292 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <link rel="shortcut icon" href="{% static 'bigfive/images/favicon.png'%}" type="image/x-icon">
+
+  <title>Dikakapa Big Five</title>
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="{% static 'bigfive/css/bootstrap.css'%}" />
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Poppins:400,600,700&display=swap" rel="stylesheet" />
+
+  <!-- Custom styles for this template -->
+  <link href="{% static 'bigfive/css/style.css'%}" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="{% static 'bigfive/css/responsive.css'%}" rel="stylesheet" />
+</head>
+
+<body class="sub_page">
+  <div class="hero_area">
+    <!-- header section strats -->
+    <div class="hero_bg_box">
+      <div class="img-box">
+        <img src="{% static 'bigfive/images/hero-bg.jpg'%}" alt="">
+      </div>
+    </div>
+
+    <header class="header_section">
+      <div class="header_top">
+        <div class="container-fluid">
+          <div class="contact_link-container">
+            <a href="" class="contact_link1">
+              <i class="fa fa-map-marker" aria-hidden="true"></i>
+              <span>
+                M1 Mackenzie St, Florida Park, Roodepoort, 1709
+              </span>
+            </a>
+            <a href="" class="contact_link2">
+              <i class="fa fa-phone" aria-hidden="true"></i>
+              <span>
+                Call : 0685172241/ 0827669053
+              </span>
+            </a>
+            <a href="" class="contact_link3">
+              <i class="fa fa-envelope" aria-hidden="true"></i>
+              <span>
+                info@dikakapabigfive.com
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="header_bottom">
+        <div class="container-fluid">
+          <nav class="navbar navbar-expand-lg custom_nav-container">
+            <a class="navbar-brand" href="{% url 'home'%}">
+              <span>
+                              <figure class="img-box" data-wow-delay="1s">
+                                   <img src="{% static 'bigfive/images/author-image.png'%}" class="img-responsive" alt="">
+                              </figure> 
+              </span>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class=""></span>
+            </button>
+
+            <div class="collapse navbar-collapse ml-auto" id="navbarSupportedContent">
+              <ul class="navbar-nav  ">
+                <li class="nav-item ">
+                  <a class="nav-link" href="{% url 'home'%}">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'about'%}"> About</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'service'%}"> Services </a>
+                </li>
+
+                <li class="nav-item active">
+                  <a class="nav-link" href="{% url 'contact'%}">Contact us</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <!-- end header section -->
+  </div>
+
+  <!-- contact section -->
+{% if first_name %}
+
+  <section class="contact_section layout_padding">
+    <div class="contact_bg_box">
+      <div class="img-box">
+        <img src="{% static 'bigfive/images/contact-bg.jpg'%}" alt="">
+      </div>
+    </div>
+    <div class="container">
+      <div class="heading_container heading_center">
+        <h2>
+          Message Sent
+        </h2>
+        <p>Thank You {{ first_name }}, We've Recieved Your Message.</p>
+      </div>
+      <div class="">
+        <div class="row">
+          <div class="col-md-7 mx-auto">
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+{% else %}
+
+  <section class="contact_section layout_padding">
+    <div class="contact_bg_box">
+      <div class="img-box">
+        <img src="{% static 'bigfive/images/contact-bg.jpg'%}" alt="">
+      </div>
+    </div>
+    <div class="container">
+      <div class="heading_container heading_center">
+        <h2>
+          Get In touch
+        </h2>
+      </div>
+      <div class="">
+        <div class="row">
+          <div class="col-md-7 mx-auto">
+            <form action="{% url 'contact' %}" method="post" enctype="multipart/form-data">
+              {% csrf_token %}
+              <div class="contact_form-container">
+                <div>
+                  <div>
+                    <input type="text" name="first_name" id="first_name" placeholder="Full Name" />
+                  </div>
+                  <div>
+                    <input type="email" name="first_email" id="first_email" placeholder="Email " />
+                  </div>
+                  <div>
+                    <input type="text" name="first_number" id="first_number" placeholder="Phone Number" />
+                  </div>
+                  <div class="">
+                    <input type="text" name="first_message" id="first_message" placeholder="Message" class="message_input" />
+                  </div>
+                  <div class="btn-box ">
+                    <button type="submit">
+                      Send
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+{% endif %}
+  <!-- end contact section -->
+  <!-- map section -->
+
+  <section class="client_section layout_padding">
+    <div class="container ">
+      <div class="heading_container heading_center">
+        <h2>
+          We Are Here
+        </h2>
+
+      </div>
+     <!-- GOOGLE MAP -->
+     <section id="google-map">
+     <!-- How to change your own map point
+            1. Go to Google Maps 
+            2. Click on your location point
+            3. Click "Share" and choose "Embed map" tab
+            4. Copy only URL and paste it within the src="" field below
+
+            
+  -->
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3581.400650868405!2d27.9076448!3d-26.151078199999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e95a01a0112c74f%3A0x9a14b428149d54c3!2s1%20Mackenzie%20St%2C%20Florida%20Park%2C%20Roodepoort%2C%201709!5e0!3m2!1sen!2sza!4v1659568502598!5m2!1sen!2sza" width="100%" height="350" frameborder="0" style="border:0" allowfullscreen></iframe>
+     </section>           
+    </div>
+  </section>
+
+  <!-- end map section -->
+
+  <!-- info section -->
+  <section class="info_section ">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <div class="info_logo">
+            <a class="navbar-brand" href="{% url 'home'%}">
+              <span>
+                DIKAKAPA BIG FIVE
+              </span>
+            </a>
+
+          </div>
+        </div>
+        <div class="col-md-3">
+
+        </div>
+        <div class="col-md-3">
+          <div class="info_info">
+            <h5>
+              CONTACT US
+            </h5>
+          </div>
+          <div class="info_contact">
+            <a href="" class="">
+              <i class="fa fa-map-marker" aria-hidden="true"></i>
+              <span>
+                1 Mackenzie St, Florida Park, Roodepoort, 1709
+              </span>
+            </a>
+            <a href="" class="">
+              <i class="fa fa-phone" aria-hidden="true"></i>
+              <span>
+                Call : 0685172241/ 0827669053
+              </span>
+            </a>
+            <a href="" class="">
+              <i class="fa fa-envelope" aria-hidden="true"></i>
+              <span>
+                info@dikakapabigfive.com
+              </span>
+            </a>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="info_form ">
+
+            <div class="social_box">
+              <a href="">
+                <i class="fa fa-facebook" aria-hidden="true"></i>
+              </a>
+              <a href="">
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+              </a>
+              <a href="">
+                <i class="fa fa-youtube" aria-hidden="true"></i>
+              </a>
+              <a href="">
+                <i class="fa fa-instagram" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end info_section -->
+
+
+
+
+  <!-- footer section -->
+  <footer class="container-fluid footer_section">
+    <p>
+    <span id="currentYear"></span> Copyright &copy; 2022 Dikakapa Big Fives | Powered by
+      <a href="https://twitter.com/jc_le_mulivha">MULIVHA</a>
+    </p>
+  </footer>
+  <!-- footer section -->
+
+  <script src="{% static 'bigfive/js/jquery-3.4.1.min.js'%}"></script>
+  <script src="{% static 'bigfive/js/bootstrap.js'%}"></script>
+  <script src="{% static 'bigfive/js/custom.js'%}"></script>
+</body>
+
+</html>
